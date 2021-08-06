@@ -1,8 +1,6 @@
 import { Button, Flex, Heading, Image, Stack, Text, useBreakpointValue } from '@chakra-ui/react';
-import Container from 'components/Container';
 import Footer from 'layouts/main/Footer';
 import Navbar from 'layouts/main/NavBar';
-import { RootState, useDispatch, useSelector } from 'redux/store';
 
 const Index = () => {
   return (

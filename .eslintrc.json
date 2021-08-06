@@ -31,15 +31,5 @@
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off"
-  },
-  "prettier/prettier": [
-    2,
-    {
-      "printWidth": 100,
-      "singleQuote": true,
-      "trailingComma": "none",
-      "tabWidth": 2,
-      "endOfLine": "auto"
-    }
-  ]
+  }
 }

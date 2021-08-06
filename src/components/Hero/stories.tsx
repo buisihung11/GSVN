@@ -1,6 +1,6 @@
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { Story, Meta } from '@storybook/react/types-6-0';
 
-import Hero, { HeroProps } from '.'
+import Hero, { HeroProps } from '.';
 
 export default {
   title: 'Hero',
@@ -8,6 +8,6 @@ export default {
   parameters: {
     layout: 'fullscreen'
   }
-} as Meta
+} as Meta;
 
-export const Default: Story<HeroProps> = (args) => <Hero {...args} />
+export const Default: Story<HeroProps> = (args) => <Hero {...args} />;

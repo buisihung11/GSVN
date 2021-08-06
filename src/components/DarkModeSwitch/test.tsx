@@ -1,11 +1,11 @@
-import { render, screen } from 'utils/test-utils'
+import { render, screen } from 'utils/test-utils';
 
-import DarkModeSwitch from '.'
+import DarkModeSwitch from '.';
 
 describe('<DarkModeSwitch/ >', () => {
   it('should render with a checkbox input', () => {
-    render(<DarkModeSwitch />)
+    render(<DarkModeSwitch />);
 
-    expect(screen.getByRole('checkbox')).toBeInTheDocument()
-  })
-})
+    expect(screen.getByRole('checkbox')).toBeInTheDocument();
+  });
+});
