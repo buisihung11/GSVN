@@ -1,26 +1,15 @@
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme, ThemeConfig } from '@chakra-ui/react';
+import foundations from './foundations';
 
-// Global style overrides
-import styles from './styles'
+const config: ThemeConfig = {
+  useSystemColorMode: false,
+  initialColorMode: 'light',
+  cssVarPrefix: 'chakra'
+};
 
-// Foundational style overrides
-import config from './foundations/config'
-import fonts from './foundations/fonts'
-import colors from './foundations/colors'
-import shadows from './foundations/shadows'
+export const theme = {
+  ...foundations,
+  config
+};
 
-// Component style overrides
-import Button from './components/button'
-
-const customTheme = {
-  styles,
-  fonts,
-  config,
-  colors,
-  shadows,
-  components: {
-    Button
-  }
-}
-
-export default extendTheme(customTheme)
+export default extendTheme(theme);
