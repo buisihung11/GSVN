@@ -1,11 +1,13 @@
 import Icon from '@iconify/react';
 import downArrowIcon from '@iconify/icons-eva/arrow-downward-fill';
-import { Button, Container, Stack, TextField, Typography } from '@material-ui/core';
+import { Button, Container, Grid, Stack, TextField, Typography } from '@material-ui/core';
 import { styled } from '@material-ui/styles';
 import { Box } from '@material-ui/system';
 import BackToTop from 'components/BackToTop';
 import SupportBtn from 'components/SupportBtn';
 import MainNavbar from 'layouts/main/MainNavbar';
+import { TUTOR_LISTS } from 'mock/tutor';
+import TutorCard from 'components/TutorCard';
 
 const ScrollDownWrapper = styled(Box)({
   position: 'absolute',
@@ -61,6 +63,18 @@ const Index = () => {
           </Stack>
         </Box>
       </Container>
+      <Box pt={8} pb={4} px={4} textAlign="center">
+        <Stack spacing={2}>
+          <Typography variant="h3">Tutor mới</Typography>
+          <Grid container spacing={2}>
+            {TUTOR_LISTS.slice(0, 3).map((tutor) => (
+              <Grid item xs={4} key={tutor.id}>
+                <TutorCard tutor={tutor} />
+              </Grid>
+            ))}
+          </Grid>
+        </Stack>
+      </Box>
     </>
   );
 };

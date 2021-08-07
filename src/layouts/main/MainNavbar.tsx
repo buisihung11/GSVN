@@ -1,22 +1,19 @@
-import { useRouter } from 'next/router';
-import Link from 'next/link';
+import profileCircled from '@iconify/icons-iconoir/profile-circled';
+import Icon from '@iconify/react';
+import { AppBar, Box, Button, Container, IconButton, Stack, Toolbar } from '@material-ui/core';
 // material
 import { styled } from '@material-ui/core/styles';
-import { Box, Button, AppBar, Toolbar, Container } from '@material-ui/core';
-// hooks
-import useOffSetTop from '../../hooks/useOffSetTop';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 // components
 import Logo from '../../components/Logo';
-import Label from '../../components/Label';
-import { MHidden } from '../../components/@material-extend';
-//
-import MenuDesktop from './MenuDesktop';
-import MenuMobile from './MenuMobile';
+// hooks
+import useOffSetTop from '../../hooks/useOffSetTop';
 
 // ----------------------------------------------------------------------
 
 const APP_BAR_MOBILE = 64;
-const APP_BAR_DESKTOP = 88;
+const APP_BAR_DESKTOP = 64;
 
 const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   height: APP_BAR_MOBILE,
@@ -38,7 +35,7 @@ const ToolbarShadowStyle = styled('div')(({ theme }) => ({
   margin: 'auto',
   borderRadius: '50%',
   position: 'absolute',
-  width: `calc(100% - 48px)`,
+  width: `1328px`,
   boxShadow: theme.customShadows.z8
 }));
 
@@ -57,6 +54,20 @@ export type MenuItemProps = {
     }[];
   }[];
 };
+
+const LinkStyle = styled('a')(({ theme }) => ({
+  ...theme.typography.subtitle2,
+  textTransform: 'uppercase',
+  textDecoration: 'none',
+  color: theme.palette.text.primary,
+  transition: theme.transitions.create('opacity', {
+    duration: theme.transitions.duration.shortest
+  }),
+  '&:hover': {
+    opacity: 0.48,
+    textDecoration: 'none'
+  }
+}));
 
 export type MenuProps = {
   isOffset: boolean;
@@ -81,7 +92,7 @@ export default function MainNavbar() {
         }}
       >
         <Container
-          maxWidth="lg"
+          maxWidth="xl"
           sx={{
             display: 'flex',
             alignItems: 'center',
@@ -93,18 +104,26 @@ export default function MainNavbar() {
               <Logo />
             </a>
           </Link>
-          <Label color="info" sx={{ ml: 1 }}>
-            Ts v2.3.0
-          </Label>
+
           <Box sx={{ flexGrow: 1 }} />
 
-          <Button
-            variant="contained"
-            target="_blank"
-            href="https://material-ui.com/store/items/minimal-dashboard/"
-          >
-            Purchase Now
-          </Button>
+          <Stack direction="row" spacing={2} alignItems="center">
+            <Link prefetch passHref href="/">
+              <LinkStyle>Tutor</LinkStyle>
+            </Link>
+            <Link prefetch passHref href="/">
+              <LinkStyle>Academy</LinkStyle>
+            </Link>
+            <Link prefetch passHref href="/">
+              <LinkStyle>Become a tutor</LinkStyle>
+            </Link>
+            <Button variant="outlined" disableElevation sx={{ textTransform: 'uppercase' }}>
+              Find tutor
+            </Button>
+            <IconButton>
+              <Icon icon={profileCircled} />
+            </IconButton>
+          </Stack>
         </Container>
       </ToolbarStyle>
 

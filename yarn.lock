@@ -1473,6 +1473,11 @@
   resolved "https://registry.yarnpkg.com/@iconify/icons-ic/-/icons-ic-1.1.8.tgz#86712acd81151c5781706906f30de55ddc5057f1"
   integrity sha512-m7t8qnTvKry5U5hDjSgcWWnhDVHHdiaDLZ+TboseUeAIpH0yWgi7MOX0DyVqbUPgkf/6g4d6aKIbANa1AqOOhw==
 
+"@iconify/icons-iconoir@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-iconoir/-/icons-iconoir-1.1.1.tgz#1258cc3f9f14a28cfed1b7aabda01642a314aea5"
+  integrity sha512-hPnvhFJOVueubYgu+1xJkIVz64J4eYhN3zmsvmhaOWCoymd7x3uZnq3LaApibaR8Yah7dHbjiFcIKuhpSt6apA==
+
 "@iconify/react@^1.1.4":
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/@iconify/react/-/react-1.1.4.tgz#c778eddbaf196e55705d0bedff00d039dc1de8d3"
@@ -3933,6 +3938,13 @@ axe-core@^4.0.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.3.2.tgz#fcf8777b82c62cfc69c7e9f32c0d2226287680e7"
   integrity sha512-5LMaDRWm8ZFPAEdzTYmgjjEdj1YnQcpfrVajO/sn/LhbpGp0Y0H64c2hLZI1gRMxfA+w1S71Uc/nHaOXgcCvGg==
+
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+  dependencies:
+    follow-redirects "^1.10.0"
 
 axobject-query@^2.2.0:
   version "2.2.0"
@@ -6784,6 +6796,11 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
+
+follow-redirects@^1.10.0:
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.1.tgz#d9114ded0a1cfdd334e164e6662ad02bfd91ff43"
+  integrity sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==
 
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"

@@ -22,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             name="description"
             content="GSVN tự hào là nền tảng đầu tiên cung cấp đội ngũ tutor chất lượng tại việt nam"
           />
+          <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         </Head>
         <ReduxProvider store={store}>
           <PersistGate loading={<p>Loading</p>} persistor={persistor}>
