@@ -1,73 +1,68 @@
-import { Button, Flex, Heading, Image, Stack, Text, useBreakpointValue } from '@chakra-ui/react';
-import Footer from 'layouts/main/Footer';
-import Navbar from 'layouts/main/NavBar';
+import Icon from '@iconify/react';
+import downArrowIcon from '@iconify/icons-eva/arrow-downward-fill';
+import { Button, Container, Stack, TextField, Typography } from '@material-ui/core';
+import { styled } from '@material-ui/styles';
+import { Box } from '@material-ui/system';
+import BackToTop from 'components/BackToTop';
+import SupportBtn from 'components/SupportBtn';
+import MainNavbar from 'layouts/main/MainNavbar';
+
+const ScrollDownWrapper = styled(Box)({
+  position: 'absolute',
+  left: '50%',
+  bottom: '5px',
+  transform: 'translate(-50%,0)',
+  textAlign: 'center'
+});
 
 const Index = () => {
   return (
     <>
-      <Navbar />
-      <SplitScreen />
-      <Footer />
+      <BackToTop />
+      <SupportBtn />
+      <MainNavbar />
+      <Container>
+        <ScrollDownWrapper>
+          <Typography variant="caption">If not, scroll down to discover</Typography>
+          <Box>
+            <Icon icon={downArrowIcon} />
+          </Box>
+        </ScrollDownWrapper>
+        <Box
+          width="880px"
+          mx="auto"
+          textAlign="center"
+          height="100vh"
+          display="flex"
+          justifyContent="center"
+          alignItems="cetnter"
+          flexDirection="column"
+        >
+          <Box mb={4}>
+            <Typography variant="h3" component="h1">
+              GSVN tự hào là nền tảng đầu tiên cung cấp đội ngũ tutor chất lượng tại việt nam
+            </Typography>
+            <Typography variant="body1">
+              Dù là online hay offline, đội ngũ tutors chất lượng được GSVN kiểm định sẽ giúp sự học
+              của bạn được nâng lên một tầm cao mới. Chỉ với một vài thông tin bên dưới, chúng tôi
+              sẽ gợi ý ngay cho bạn những lựa chọn tốt nhất!
+            </Typography>
+          </Box>
+          <Stack mx="auto" spacing={2} sx={{ width: '100%' }}>
+            <TextField fullWidth placeholder="Môn học bạn quan tâm" />
+            <TextField fullWidth placeholder="Khu vực ưu tiên" />
+            <Box>
+              <Button size="large" variant="outlined">
+                <Typography sx={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
+                  Find me a tutor now
+                </Typography>
+              </Button>
+            </Box>
+          </Stack>
+        </Box>
+      </Container>
     </>
   );
 };
 
-function SplitScreen() {
-  return (
-    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-      <Flex p={8} flex={1} align={'center'} justify={'center'}>
-        <Stack spacing={6} w={'full'} maxW={'lg'}>
-          <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-            <Text
-              as={'span'}
-              position={'relative'}
-              _after={{
-                content: "''",
-                width: 'full',
-                height: useBreakpointValue({ base: '20%', md: '30%' }),
-                position: 'absolute',
-                bottom: 1,
-                left: 0,
-                bg: 'blue.400',
-                zIndex: -1
-              }}
-            >
-              Gia su Viet Nam
-            </Text>
-            <br />{' '}
-            {/* <Text color={'blue.400'} as={'span'}>
-              Design Projects
-            </Text>{' '} */}
-          </Heading>
-          <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-            The project board is an exclusive resource for contract work. It's perfect for
-            freelancers, agencies, and moonlighters.
-          </Text>
-          <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
-            <Button
-              rounded={'full'}
-              bg={'blue.400'}
-              color={'white'}
-              _hover={{
-                bg: 'blue.500'
-              }}
-            >
-              Create Project
-            </Button>
-            <Button rounded={'full'}>How It Works</Button>
-          </Stack>
-        </Stack>
-      </Flex>
-      <Flex flex={1}>
-        <Image
-          alt={'Login Image'}
-          objectFit={'cover'}
-          src={
-            'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-          }
-        />
-      </Flex>
-    </Stack>
-  );
-}
 export default Index;
